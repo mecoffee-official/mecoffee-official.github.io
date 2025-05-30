@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Me Coffee | Coffee Shop & Roastery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('assets/img/bg.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body class="text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <a href="#home" class="flex items-center gap-3">
+            <img src="assets/img/mee-coffee-transparent.png" alt="Me Coffee Logo" class="h-20">
+            <h1 class="text-xl font-bold text-yellow-400">Me Coffee</h1>
+        </a>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex space-x-6 text-yellow-300 text-lg font-medium">
+        <a href="#home" class="nav-link hover:text-white">Home</a>
+        <a href="#about" class="nav-link hover:text-white">About Us</a>
+        <a href="#products" class="nav-link hover:text-white">Our Products</a>
+        <a href="#shop" class="nav-link hover:text-white">Shop</a>
+        <a href="#contact" class="nav-link hover:text-white">Contact</a>
+      </nav>
+
+        <!-- Mobile menu toggle -->
+    <div class="md:hidden pr-2">
+        <button id="menu-toggle" type="button" class="focus:outline-none">
+            <svg class="h-8 w-8 text-yellow-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 5h16M4 12h16M4 19h16" />
+            </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 bg-white/10 backdrop-blur-sm rounded text-yellow-200">
+    <!-- <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 border border-red-500"></div> -->
+      <a href="#home" class="nav-link block text-yellow-200 hover:text-white">Home</a>
+      <a href="#about" class="nav-link block text-yellow-200 hover:text-white">About Us</a>
+      <a href="#products" class="nav-link block text-yellow-200 hover:text-white">Our Products</a>
+      <a href="#shop" class="nav-link block text-yellow-200 hover:text-white">Shop</a>
+      <a href="#contact" class="nav-link block text-yellow-200 hover:text-white">Contact</a>
+    </div>
+  </header>
+
+  <!-- Sections -->
+  <main class="pt-24 space-y-20">
+
+    <!-- Home -->
+    <section id="home" class="fade-section min-h-screen flex items-center justify-center text-center px-4">
+      <div class="glass p-10 max-w-3xl">
+        <img class="mx-auto block mb-6" src="assets/img/mee-coffee-transparent.png" alt="Logo Mee Coffee">
+        <h2 class="text-6xl font-bold text-yellow-300 mb-4">Welcome to Me Coffee</h2>
+        <p class="text-3xl">Your cozy coffee destination & artisan roastery <br> from Papua.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="fade-section hidden min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="glass p-8 max-w-4xl w-full">
+            <h3 class="text-6xl font-semibold text-yellow-300 mb-8 text-center">About Us</h3>
+
+            <p class="text-3xl text-center">
+            We bring the soul of the mountains into every brew. Discover handcrafted excellence with every sip at Me Coffee.
+            </p>
+
+            <!-- Gallery 3 columns -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+            <img src="assets/img/products/espresso.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
+            <img src="assets/img/products/Cold Brew.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
+            <img src="assets/img/products/Roasted Beans.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="fade-section hidden min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <div class="glass p-8 w-full max-w-4xl">
+        <h3 class="text-6xl font-semibold text-yellow-300 mb-6 text-center">Our Products</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass p-4 text-center">
+            <img src="assets/img/products/Espresso.png" alt="Espresso">
+            <h4 class="font-bold text-yellow-300 text-3xl">Espresso</h4>
+            <p>Deep, bold, and beautifully balanced.</p>
+          </div>
+          <div class="glass p-4 text-center">
+            <img src="assets/img/products/Cold Brew.png" alt="Cold Brew">
+            <h4 class="font-bold text-yellow-300 text-3xl">Cold Brew</h4>
+            <p>Cool, crisp, and incredibly smooth.</p>
+          </div>
+          <div class="glass p-4 text-center">
+            <img src="assets/img/products/Roasted Beans.png" alt="Roasted Beans">
+            <h4 class="font-bold text-yellow-300 text-3xl">Roasted Beans</h4>
+            <p>Locally roasted, globally loved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="fade-section hidden min-h-screen flex items-center justify-center px-4 py-20">
+      <div class="glass p-8 max-w-3xl text-center">
+        <h3 class="text-6xl font-semibold text-yellow-300 mb-4">Shop</h3>
+        <p class="text-3xl">Order artisan blends and unique gear from our online store.</p>
+        <a href="#" class="mt-6 inline-block px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition">Go to Shop</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-section hidden min-h-screen flex items-center justify-center px-4 py-20">
+      <div class="glass p-8 max-w-xl w-full text-center">
+        <h3 class="text-6xl font-semibold text-yellow-300 mb-4">Contact Us</h3>
+        <form class="space-y-4">
+          <input type="text" placeholder="Your Name" class="w-full p-2 rounded bg-white/20 text-white placeholder-white/60 focus:outline-none" />
+          <input type="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/20 text-white placeholder-white/60 focus:outline-none" />
+          <textarea rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-white/20 text-white placeholder-white/60 focus:outline-none"></textarea>
+          <button type="submit" class="px-6 py-2 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-300 transition">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black/50 text-center py-4 text-yellow-200">
+    &copy; 2025 Me Coffee. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Section transition
+        const links = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.fade-section');
+
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                section.classList.remove('hidden');
+                section.classList.add('opacity-0');
+                setTimeout(() => {
+                    section.classList.remove('opacity-0');
+                    section.classList.add('transition-opacity', 'duration-700', 'opacity-100');
+                }, 50);
+                } else {
+                section.classList.remove('opacity-100');
+                section.classList.add('transition-opacity', 'duration-500', 'opacity-0');
+                setTimeout(() => {
+                    section.classList.add('hidden');
+                }, 500);
+                }
+            });
+
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+            });
+        });
+        });
+  </script>
+</body>
+</html>
