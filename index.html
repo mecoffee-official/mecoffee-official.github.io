@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Me Coffee | Coffee Shop & Roastery</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
       background: url('assets/img/bg.png') no-repeat center center fixed;
@@ -19,6 +23,9 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
   </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
 </head>
 
 <body class="text-white font-sans">
@@ -87,7 +94,7 @@
 
             <!-- Gallery 3 columns -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-            <img src="assets/img/products/espresso.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
+            <img src="assets/img/products/Espresso.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
             <img src="assets/img/products/Cold Brew.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
             <img src="assets/img/products/Roasted Beans.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
             </div>
@@ -123,28 +130,53 @@
       <div class="glass p-8 max-w-3xl text-center">
         <h3 class="text-6xl font-semibold text-yellow-300 mb-4">Shop</h3>
         <p class="text-3xl">Order artisan blends and unique gear from our online store.</p>
-        <a href="#" class="mt-6 inline-block px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition">Go to Shop</a>
+        <a
+            href="https://wa.me/6285244308424?text=Halo%20Me%20Coffee%21"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center gap-2 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition"
+            >
+            <i class="fab fa-whatsapp text-xl"></i> Chat via WhatsApp
+        </a>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="fade-section hidden min-h-screen flex items-center justify-center px-4 py-20">
-      <div class="glass p-8 max-w-xl w-full text-center">
-        <h3 class="text-6xl font-semibold text-yellow-300 mb-4">Contact Us</h3>
-        <form class="space-y-4">
-          <input type="text" placeholder="Your Name" class="w-full p-2 rounded bg-white/20 text-white placeholder-white/60 focus:outline-none" />
-          <input type="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/20 text-white placeholder-white/60 focus:outline-none" />
-          <textarea rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-white/20 text-white placeholder-white/60 focus:outline-none"></textarea>
-          <button type="submit" class="px-6 py-2 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-300 transition">Send</button>
-        </form>
-      </div>
+        <div class="glass p-8 max-w-3xl w-full text-center space-y-6">
+            <h3 class="text-6xl font-semibold text-yellow-300 mb-4">Contact Us</h3>
+
+            <!-- Google Maps Embed -->
+            <div class="w-full h-72 rounded-lg overflow-hidden border-2 border-yellow-300">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.2477453224283!2d140.5226611375148!3d-2.5719088101123138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686cf1fc83cadd2f%3A0x29bfd45f7fdcbc1b!2sJl.%20Pasir%2C%20Sentani%20Kota%2C%20Kec.%20Sentani%2C%20Kabupaten%20Jayapura%2C%20Papua%2099359!5e1!3m2!1sen!2sid!4v1748603332261!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex justify-center space-x-6 mt-6 text-yellow-200 text-3xl">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="hover:text-white">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="hover:text-white">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube" class="hover:text-white">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp" class="hover:text-white">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
     </section>
+
+
   </main>
 
   <!-- Footer -->
   <footer class="bg-black/50 text-center py-4 text-yellow-200">
     &copy; 2025 Me Coffee. All rights reserved.
   </footer>
+
 
   <!-- Scripts -->
   <script>
