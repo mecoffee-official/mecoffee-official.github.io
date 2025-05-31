@@ -33,7 +33,8 @@
 
   <style>
     body {
-      background: url('assets/img/bg.png') no-repeat center center fixed;
+      background: url('assets/img/bg.jpg') no-repeat center center fixed;
+      background-color: #1f1702;
       background-size: cover;
     }
 
@@ -108,10 +109,10 @@
 
     <!-- Home -->
     <section id="home" class="fade-section min-h-screen flex items-center justify-center text-center px-4">
-      <div class="glass p-10 max-w-3xl">
+      <div class="glass p-10 max-w-6xl">
         <img class="mx-auto block mb-6" src="assets/img/mee-coffee-transparent.png" alt="Logo Mee Coffee">
         <h2 class="text-6xl font-bold text-yellow-300 mb-4">Welcome to Me Coffee</h2>
-        <p class="text-3xl">Your cozy coffee destination & artisan roastery <br> from Papua.</p>
+        <p class="text-3xl text-yellow-500">Your cozy coffee destination & artisan roastery <br> from Papua.</p>
       </div>
     </section>
 
@@ -120,15 +121,13 @@
         <div class="glass p-8 max-w-4xl w-full">
             <h3 class="text-6xl font-semibold text-yellow-300 mb-8 text-center"><i class="fas fa-info-circle mr-2"></i>About Us</h3>
 
-            <p class="text-3xl text-center">
-            We bring the soul of the mountains into every brew. Discover handcrafted excellence with every sip at Me Coffee.
-            </p>
+            <p class="text-3xl text-center text-yellow-500">We bring the soul of the mountains into every brew. Discover handcrafted excellence with every sip at Me Coffee.</p>
 
             <!-- Gallery 3 columns -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-            <img src="assets/img/products/Espresso.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
-            <img src="assets/img/products/Cold Brew.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
-            <img src="assets/img/products/Roasted Beans.png" alt="Image" class="w-full h-48 object-cover rounded-lg" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+              <img src="assets/img/gallery/mecoffee-coffee-shop-1.png" alt="Image" class="w-full h-64 object-cover rounded-lg" />
+              <img src="assets/img/gallery/mecoffee-coffee-shop-2.png" alt="Image" class="w-full h-64 object-cover rounded-lg" />
+              <img src="assets/img/gallery/mecoffee-coffee-shop-3.png" alt="Image" class="w-full h-64 object-cover rounded-lg" />
             </div>
         </div>
     </section>
@@ -136,52 +135,101 @@
     <!-- Products -->
     <section id="products" class="fade-section hidden min-h-screen flex flex-col items-center justify-center px-4 py-20">
       <div class="glass p-8 w-full max-w-4xl">
+        
         <h3 class="text-6xl font-semibold text-yellow-300 mb-6 text-center"><i class="fas fa-box-open mr-2"></i>Our Products</h3>
+        <p class="text-2xl text-center text-yellow-500 mb-8">We bring the soul of the mountains into every brew. Discover handcrafted excellence with every sip at Me Coffee.</p>
+
         <div class="grid md:grid-cols-3 gap-6">
           <div class="glass p-4 text-center">
-            <img src="assets/img/products/Espresso.png" alt="Espresso">
-            <h4 class="font-bold text-yellow-300 text-3xl">Espresso</h4>
-            <p>Deep, bold, and beautifully balanced.</p>
+            <img src="assets/img/products/mecoffee-espresso.png" alt="Espresso">
+            <h4 class="font-bold text-yellow-300 text-3xl mt-5">Espresso</h4>
+            <p class="text-yellow-500">Deep, bold, and beautifully balanced.</p>
           </div>
           <div class="glass p-4 text-center">
             <img src="assets/img/products/Cold Brew.png" alt="Cold Brew">
-            <h4 class="font-bold text-yellow-300 text-3xl">Cold Brew</h4>
-            <p>Cool, crisp, and incredibly smooth.</p>
+            <h4 class="font-bold text-yellow-300 text-3xl mt-5">Cold Brew</h4>
+            <p class="text-yellow-500">Cool, crisp, and incredibly smooth.</p>
           </div>
           <div class="glass p-4 text-center">
             <img src="assets/img/products/Roasted Beans.png" alt="Roasted Beans">
-            <h4 class="font-bold text-yellow-300 text-3xl">Roasted Beans</h4>
-            <p>Locally roasted, globally loved.</p>
+            <h4 class="font-bold text-yellow-300 text-3xl mt-5">Roasted Beans</h4>
+            <p class="text-yellow-500">Locally roasted, globally loved.</p>
           </div>
         </div>
       </div>
     </section>
 
+    
+    
+
     <!-- Shop -->
     <section id="shop" class="fade-section hidden min-h-screen flex items-center justify-center px-4 py-20">
       <div class="glass p-8 max-w-3xl text-center">
-        <h3 class="text-6xl font-semibold text-yellow-300 mb-4"><i class="fas fa-store mr-2"></i>Shop</h3>
-        <p class="text-3xl">Order artisan blends and unique gear from our online store.</p>
-        <a
+
+        <h3 class="text-6xl font-semibold text-yellow-300 mb-4">
+          <i class="fas fa-store mr-2"></i>Shop
+        </h3>
+        
+        <p class="text-2xl mb-4 text-yellow-500">
+          Dukung brand MeCoffee dengan membeli merchandise eksklusif kami—desain menarik dan kualitas terbaik untuk para pecinta kopi.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass p-4 text-center">
+            <img src="assets/img/shops/mecoffee-t-shirt-mug.png" alt="T-Shirt and Mug">
+            <h4 class="font-bold text-yellow-400 text-lg mt-3">T-Shirt and Mug</h4>
+            <p class="text-yellow-500">A perfect gift set featuring a branded T-shirt and a ceramic coffee mug.</p>
+          </div>
+          <div class="glass p-4 text-center">
+            <img src="assets/img/shops/mecoffee-t-shirt.png" alt="T-Shirt">
+            <h4 class="font-bold text-yellow-400 text-lg mt-3">T-Shirt</h4>
+            <p class="text-yellow-500">Comfortable and stylish T-shirt with MeCoffee branding, perfect for everyday wear.</p>
+          </div>
+          <div class="glass p-4 text-center">
+            <img src="assets/img/shops/mecoffee-mug.png" alt="Mug">
+            <h4 class="font-bold text-yellow-400 text-lg mt-3">Mug</h4>
+            <p class="text-yellow-500">Enjoy your favorite brew with our exclusive MeCoffee ceramic mug.</p>
+          </div>
+        </div>
+
+        <div class="my-8">
+          <p class="text-yellow-500">
+            Tertarik dengan produk kami? Klik tombol di bawah untuk memesan langsung melalui WhatsApp dan dapatkan respons cepat dari tim MeCoffee.
+          </p>
+
+          <a
             href="https://wa.me/6285244308424?text=Halo%20Me%20Coffee%21"
             target="_blank"
             rel="noopener noreferrer"
             class="mt-6 inline-flex items-center gap-2 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition"
-            >
+          >
             <i class="fab fa-whatsapp text-xl"></i> Chat via WhatsApp
-        </a>
+          </a>
+        </div>
       </div>
     </section>
+
+
+
+
 
     <!-- Contact -->
     <section id="contact" class="fade-section hidden min-h-screen flex items-center justify-center px-4 py-20">
         <div class="glass p-8 max-w-3xl w-full text-center space-y-6">
             <h3 class="text-6xl font-semibold text-yellow-300 mb-4"><i class="fas fa-envelope mr-2"></i>Contact Us</h3>
+            
+            <p class="text-2xl text-center text-yellow-500 mb-8">
+                Hubungi kami untuk pemesanan, informasi produk, atau kerja sama bisnis. Kami siap melayani Anda!
+            </p>
 
             <!-- Google Maps Embed -->
             <div class="w-full h-72 rounded-lg overflow-hidden border-2 border-yellow-300">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d711.0084397445708!2d140.52176083070114!3d-2.571973331982769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sid!4v1748678588553!5m2!1sen!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d711.0084397445708!2d140.52176083070114!3d-2.571973331982769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sid!4v1748678588553!5m2!1sen!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+
+            <p class="text-lg text-center text-yellow-500 mb-8">
+                Temukan kami di media sosial untuk update terbaru, promosi menarik, dan interaksi langsung dengan tim kami.
+            </p>
 
             <!-- Social Media Links -->
             <div class="flex justify-center space-x-6 mt-6 text-yellow-200 text-3xl">
@@ -197,9 +245,13 @@
                 <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp" class="hover:text-white">
                     <i class="fab fa-whatsapp"></i>
                 </a>
+                <a href="https://www.youtube.com/@mecoffee_official" target="_blank" aria-label="WhatsApp" class="hover:text-white">
+                    <i class="fab fa-youtube"></i>
+                </a>
             </div>
         </div>
     </section>
+
 
 
   </main>
