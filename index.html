@@ -31,6 +31,7 @@
 
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -38,6 +39,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
+	[x-cloak] { display: none !important; }
     body {
       background: url('assets/img/bg.jpg') no-repeat center center fixed;
       background-color: #1f1702;
@@ -165,13 +167,52 @@
       cursor: pointer;
       font-weight: bold;
     }
+
+	.typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 20px;
+    }
+
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      background: #888;
+      border-radius: 50%;
+      display: inline-block;
+      animation: blink 1.4s infinite both;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    #chat-messages ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+
+    #chat-messages ol {
+      list-style-type: decimal;
+      margin-left: 1.5rem;
+    }
+
+    @keyframes blink {
+      0% { opacity: .2; transform: translateY(0); }
+      20% { opacity: 1; transform: translateY(-3px); }
+      100% { opacity: .2; transform: translateY(0); }
+    }
   </style>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </head>
 
-<body class="text-white font-sans">
+<body class="text-white font-sans" x-data="chatApp()">
 
   <!-- Navbar -->
   <header class="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-md">
@@ -475,27 +516,86 @@
     });
   </script>
 
+  <button
+    @click="isOpen = true"
+    class="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-full shadow-lg transition transform hover:scale-110"
+    title="Chat with Me Coffee"
+  >
+    Chat with Me Coffee ☕
+  </button>
 
+  <!-- Modal Overlay -->
+  <div
+    x-show="isOpen"
+    x-transition.opacity
+    @click.self="isOpen = false"
+    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+    x-cloak
+  >
+    <!-- Chat Modal -->
+    <div
+      x-show="isOpen"
+      x-transition.scale.origin.bottom.right
+      class="w-full lg:max-w-5xl bg-gray-900/80 lg:rounded-2xl shadow-lg border border-yellow-400/20 overflow-hidden relative"
+    >
+      <!-- Header -->
+      <div class="flex items-center justify-between bg-gray-800/90 px-5 py-3 border-b border-yellow-400/30">
+        <div class="flex items-center space-x-3">
+          <img src="./assets/img/mee-coffee-transparent.png" alt="Me Coffee" class="w-8 h-8 rounded-full border border-yellow-400/60">
+          <h1 class="text-yellow-400 font-bold text-lg">Me Coffee Chat</h1>
+        </div>
+        <button @click="isOpen = false" class="text-yellow-400 hover:text-yellow-300 transition" title="Close Chat">✕</button>
+      </div>
 
-  
+      <!-- Messages -->
+      <div id="chat-messages" class="h-[400px] lg:h-[700px] overflow-y-auto p-5 space-y-4 text-gray-100">
+        <template x-for="(msg, index) in messages" :key="index">
+          <div>
+            <!-- Bot message -->
+            <div x-show="msg.sender === 'bot'" class="flex items-start space-x-3">
+              <div class="bg-gray-800/70 px-4 py-2 rounded-2xl max-w-[80%]">
+                <p x-html="msg.text"></p>
+              </div>
+            </div>
 
+            <!-- User message -->
+            <div x-show="msg.sender === 'user'" class="flex items-start justify-end space-x-3">
+              <div class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-2xl max-w-[80%]">
+                <p x-text="msg.text"></p>
+              </div>
+            </div>
+          </div>
+        </template>
 
+        <!-- Typing indicator -->
+        <div x-show="isLoadMessages" class="flex items-start space-x-3">
+          <div class="bg-gray-800/70 px-4 py-2 rounded-2xl max-w-[80%]">
+            <div class="typing-indicator">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-<!-- Toggle Button -->
-<div id="chatbot-toggle">
-  <i class="fas fa-comments"></i> MeCoffee AI Assistant
-</div>
-
-<!-- Chatbox -->
-<div id="chatbot-box" class="flex flex-col">
-  <div id="chatbot-header"><i class="fas fa-comments"></i> MeCoffee AI Assistant</div>
-  <div id="chatlog"></div>
-  <div id="chatbot-input">
-    <input type="text" id="userInput" onkeydown="checkEnter(event)" placeholder="Tulis pesan..." />
-    <button id="sendBtn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i> Kirim</button>
+      <!-- Input -->
+      <div class="border-t border-yellow-400/20 bg-gray-800/90 p-4 flex items-center space-x-3">
+        <input
+          x-model="newMessage"
+          @keydown.enter="sendMessage"
+          type="text"
+          placeholder="Ketik disini..."
+          class="flex-1 bg-gray-900/70 text-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-500"
+        />
+        <button
+          @click="sendMessage"
+          class="bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-xl transition"
+        >
+          Kirim
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+
 
 <script>
   // Toggle visibility
@@ -511,7 +611,61 @@
 <script src="script.js"></script>
 
 
+  <!-- Alpine.js logic -->
+  <script>
+    function chatApp() {
+      return {
+		isOpen: false,
+        messages: [
+          { sender: 'bot', text: 'Hai, mau tanya apa tentang Me Coffee☕ ?' },
+        ],
+        newMessage: '',
+		isLoadMessages: false,
+		threadId: crypto.randomUUID(),
 
+        init() {
+          this.scrollToBottom();
+        },
+
+        async sendMessage() {
+			if (!this.newMessage.trim()) return;
+
+			this.messages.push({ sender: 'user', text: this.newMessage });
+			const userText = this.newMessage;
+			this.newMessage = '';
+			this.isLoadMessages = true;
+			this.$nextTick(() => {
+				const body = document.getElementById("chat-messages");
+				body.scrollTop = body.scrollHeight;
+			});
+			try {
+			apiUrl = 'https://me-coffee-be-469850212057.asia-southeast2.run.app';
+			const res = await fetch(apiUrl, {
+				method: "POST",
+				headers: {
+				"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+				message: userText,
+				thread_id: this.threadId
+				})
+			});
+
+			const data = await res.json();
+			this.messages.push({ sender: 'bot', text: (data.answer || "Maaf, tidak ada jawaban.").replace(/\\n/g, "\n")  });
+			this.isLoadMessages = false;
+			this.$nextTick(() => {
+				const body = document.getElementById("chat-messages");
+				body.scrollTop = body.scrollHeight;
+			});
+			} catch (err) {
+        this.isLoadMessages = false;
+				this.messages.push({ sender: 'bot', text: "⚠️ Error menghubungi server." });
+			}
+        },
+      };
+    }
+  </script>
 
 </body>
 
