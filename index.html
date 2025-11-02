@@ -536,7 +536,7 @@
     <div
       x-show="isOpen"
       x-transition.scale.origin.bottom.right
-      class="w-full lg:max-w-5xl bg-gray-900/80 lg:rounded-2xl shadow-lg border border-yellow-400/20 overflow-hidden relative"
+      class=" lg:max-w-5xl bg-gray-900/80 lg:rounded-2xl shadow-lg border border-yellow-400/20 overflow-hidden relative"
     >
       <!-- Header -->
       <div class="flex items-center justify-between bg-gray-800/90 px-5 py-3 border-b border-yellow-400/30">
@@ -548,7 +548,7 @@
       </div>
 
       <!-- Messages -->
-      <div id="chat-messages" class="h-[400px] lg:h-[700px] overflow-y-auto p-5 space-y-4 text-gray-100">
+      <div id="chat-messages" class="h-[540px] lg:h-[700px] overflow-y-auto p-5 space-y-4 text-gray-100">
         <template x-for="(msg, index) in messages" :key="index">
           <div>
             <!-- Bot message -->
